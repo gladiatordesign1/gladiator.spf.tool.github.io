@@ -87,11 +87,11 @@ function processDomains() {
         }
 
         if (ipClass && (selectedRadio && (selectedRadio.id === 'ip4' || selectedRadio.id === '+ip4'))) {
-            result += `${subdomainsString}.${spf_domain},v=spf${domainGroup.map(domain => ` ${aPart}:${domain}/${ipClass}`).join('')} ${allType} \n`;
+            result += `${subdomainsString}.${spf_domain},v=spf1${domainGroup.map(domain => ` ${aPart}:${domain}/${ipClass}`).join('')} ${allType} \n`;
             generated_doms += `${subdomainsString}.${spf_domain}\n`;
             generated_doms_include += `include:${subdomainsString}.${spf_domain}\n`;
         } else {
-            result += `${subdomainsString}.${spf_domain},v=spf${domainGroup.map(domain => ` ${aPart}${domain}`).join('')} ${allType}\n`;
+            result += `${subdomainsString}.${spf_domain},v=spf1${domainGroup.map(domain => ` ${aPart}${domain}`).join('')} ${allType}\n`;
             generated_doms += `${subdomainsString}.${spf_domain}\n`;
             generated_doms_include += `include:${subdomainsString}.${spf_domain}\n`;
         }
